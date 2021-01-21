@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{8EC08F5B-1B8A-4533-808F-6CFBE727E24B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{CA86346F-D686-440C-AE0E-911411B08134}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.ClaimManager.WebApi", "CleanArchitecture.ClaimManager\CleanArchitecture.ClaimManager.WebApi\CleanArchitecture.ClaimManager.WebApi.csproj", "{6705D889-D39F-4D4F-A2A2-EE01F3C02794}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{86B1B123-6641-4004-BF78-2162C90891FD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.ClaimManager.Application", "CleanArchitecture.ClaimManager\CleanArchitecture.ClaimManager.Application\CleanArchitecture.ClaimManager.Application.csproj", "{EDDA4DAE-3D27-498C-9322-762B4675F1A3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.ClaimManager.Domain", "CleanArchitecture.ClaimManager\CleanArchitecture.ClaimManager.Domain\CleanArchitecture.ClaimManager.Domain.csproj", "{043152AA-B9AB-4FF8-A0C0-CE519766BADC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{CF778F5F-3130-46FB-B807-3E109674D62E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.ClaimManager.Infrastructure.Identity", "CleanArchitecture.ClaimManager\CleanArchitecture.ClaimManager.Infrastructure.Identity\CleanArchitecture.ClaimManager.Infrastructure.Identity.csproj", "{A03EA59B-8B16-4DBE-AEFB-E6C9F9FB07CE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.ClaimManager.Infrastructure.Persistence", "CleanArchitecture.ClaimManager\CleanArchitecture.ClaimManager.Infrastructure.Persistence\CleanArchitecture.ClaimManager.Infrastructure.Persistence.csproj", "{45E77CF7-4EC9-42B6-BCDC-D8E320C88E49}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.ClaimManager.Infrastructure.Shared", "CleanArchitecture.ClaimManager\CleanArchitecture.ClaimManager.Infrastructure.Shared\CleanArchitecture.ClaimManager.Infrastructure.Shared.csproj", "{04B604F0-0E64-4ED5-ABB3-A02998DADC64}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{718179E7-37A1-4470-AECA-673C299C40AA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.ClaimsManager.Client", "CleanArchitecture.ClaimsManager.Client\CleanArchitecture.ClaimsManager.Client.csproj", "{F380D700-1201-4D92-955B-DCF3B09E52C8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6705D889-D39F-4D4F-A2A2-EE01F3C02794}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6705D889-D39F-4D4F-A2A2-EE01F3C02794}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6705D889-D39F-4D4F-A2A2-EE01F3C02794}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6705D889-D39F-4D4F-A2A2-EE01F3C02794}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDDA4DAE-3D27-498C-9322-762B4675F1A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDDA4DAE-3D27-498C-9322-762B4675F1A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDDA4DAE-3D27-498C-9322-762B4675F1A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDDA4DAE-3D27-498C-9322-762B4675F1A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{043152AA-B9AB-4FF8-A0C0-CE519766BADC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{043152AA-B9AB-4FF8-A0C0-CE519766BADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{043152AA-B9AB-4FF8-A0C0-CE519766BADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{043152AA-B9AB-4FF8-A0C0-CE519766BADC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A03EA59B-8B16-4DBE-AEFB-E6C9F9FB07CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A03EA59B-8B16-4DBE-AEFB-E6C9F9FB07CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A03EA59B-8B16-4DBE-AEFB-E6C9F9FB07CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A03EA59B-8B16-4DBE-AEFB-E6C9F9FB07CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45E77CF7-4EC9-42B6-BCDC-D8E320C88E49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45E77CF7-4EC9-42B6-BCDC-D8E320C88E49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45E77CF7-4EC9-42B6-BCDC-D8E320C88E49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45E77CF7-4EC9-42B6-BCDC-D8E320C88E49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04B604F0-0E64-4ED5-ABB3-A02998DADC64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04B604F0-0E64-4ED5-ABB3-A02998DADC64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04B604F0-0E64-4ED5-ABB3-A02998DADC64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04B604F0-0E64-4ED5-ABB3-A02998DADC64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F380D700-1201-4D92-955B-DCF3B09E52C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F380D700-1201-4D92-955B-DCF3B09E52C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F380D700-1201-4D92-955B-DCF3B09E52C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F380D700-1201-4D92-955B-DCF3B09E52C8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CA86346F-D686-440C-AE0E-911411B08134} = {8EC08F5B-1B8A-4533-808F-6CFBE727E24B}
+		{6705D889-D39F-4D4F-A2A2-EE01F3C02794} = {CA86346F-D686-440C-AE0E-911411B08134}
+		{86B1B123-6641-4004-BF78-2162C90891FD} = {8EC08F5B-1B8A-4533-808F-6CFBE727E24B}
+		{EDDA4DAE-3D27-498C-9322-762B4675F1A3} = {86B1B123-6641-4004-BF78-2162C90891FD}
+		{043152AA-B9AB-4FF8-A0C0-CE519766BADC} = {86B1B123-6641-4004-BF78-2162C90891FD}
+		{CF778F5F-3130-46FB-B807-3E109674D62E} = {8EC08F5B-1B8A-4533-808F-6CFBE727E24B}
+		{A03EA59B-8B16-4DBE-AEFB-E6C9F9FB07CE} = {CF778F5F-3130-46FB-B807-3E109674D62E}
+		{45E77CF7-4EC9-42B6-BCDC-D8E320C88E49} = {CF778F5F-3130-46FB-B807-3E109674D62E}
+		{04B604F0-0E64-4ED5-ABB3-A02998DADC64} = {CF778F5F-3130-46FB-B807-3E109674D62E}
+		{718179E7-37A1-4470-AECA-673C299C40AA} = {8EC08F5B-1B8A-4533-808F-6CFBE727E24B}
+		{F380D700-1201-4D92-955B-DCF3B09E52C8} = {718179E7-37A1-4470-AECA-673C299C40AA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ABCADDB0-2B3F-431C-BA2B-D16DCB966078}
+	EndGlobalSection
+EndGlobal
