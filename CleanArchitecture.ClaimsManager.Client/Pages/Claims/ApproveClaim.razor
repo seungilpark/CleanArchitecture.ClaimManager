@@ -1,26 +1,13 @@
-﻿@page "/create-claim"
+﻿@page "/approve-claim/{Id:int?}"
 
-<Container Style="max-width:'1080px'">
-    
+<Container Class="mainContainer">
     <Row Class="my-3">
         <DisplayHeading Size="DisplayHeadingSize.Is3">Expense Claim</DisplayHeading>
     </Row>
     <Row Class="mb-5">
-        <Heading Size="HeadingSize.Is2">New Expense Claim</Heading>
+        <Heading Size="HeadingSize.Is2">Review Expense Claim</Heading>
     </Row>
     <Form>
-        <Field Horizontal="true">
-            <FieldLabel ColumnSize="ColumnSize.Is2">Title*</FieldLabel>
-            <FieldBody ColumnSize="ColumnSize.Is10">
-                <TextEdit Placeholder="Type a value" />
-            </FieldBody>
-        </Field>
-        <Field Horizontal="true">
-            <FieldLabel ColumnSize="ColumnSize.Is2">Requester*</FieldLabel>
-            <FieldBody ColumnSize="ColumnSize.Is10">
-                <TextEdit Placeholder="Type a value" />
-            </FieldBody>
-        </Field>
         <Field Horizontal="true">
             <FieldLabel ColumnSize="ColumnSize.Is2">Approver*</FieldLabel>
             <FieldBody ColumnSize="ColumnSize.Is10">
@@ -28,30 +15,62 @@
             </FieldBody>
         </Field>
         <Field Horizontal="true">
+            <FieldLabel ColumnSize="ColumnSize.Is2">Action</FieldLabel>
+            <FieldBody ColumnSize="ColumnSize.Is10">
+                <Select TValue="int">
+                    <SelectItem Value="1">Approve</SelectItem>
+                    <SelectItem Value="2">Query</SelectItem>
+                    <SelectItem Value="3">Reject</SelectItem>
+                </Select>
+            </FieldBody>
+        </Field>
+        <Field Horizontal="true">
+            <FieldLabel ColumnSize="ColumnSize.Is2">Comments</FieldLabel>
+            <FieldBody ColumnSize="ColumnSize.Is10">
+                <TextEdit ></TextEdit>
+            </FieldBody>
+        </Field>
+    </Form>
+    <Form>
+        <Field Horizontal="true">
+            <FieldLabel ColumnSize="ColumnSize.Is2">Title*</FieldLabel>
+            <FieldBody ColumnSize="ColumnSize.Is10">
+                <TextEdit Disabled="true">Title*</TextEdit>
+            </FieldBody>
+        </Field>
+        <Field Horizontal="true">
+            <FieldLabel ColumnSize="ColumnSize.Is2">Requester*</FieldLabel>
+            <FieldBody ColumnSize="ColumnSize.Is10">
+                <TextEdit Disabled="true">Jeremy</TextEdit>
+            </FieldBody>
+        </Field>
+        <Field Horizontal="true">
             <FieldLabel ColumnSize="ColumnSize.Is2"></FieldLabel>
             <FieldBody ColumnSize="ColumnSize.Is10">
-                <TextEdit Placeholder=@DateTime.Now.ToString("d/mm/yyyy") />
+                <TextEdit Disabled="true">@DateTime.Now</TextEdit>
             </FieldBody>
         </Field>
 
         <Field Horizontal="true">
             <FieldLabel ColumnSize="ColumnSize.Is2">Total Amount</FieldLabel>
             <FieldBody ColumnSize="ColumnSize.Is10">
-                <TextEdit Placeholder="" />
+                <TextEdit Disabled="true">2,000</TextEdit>
             </FieldBody>
         </Field>
         <Field Horizontal="true">
             <FieldLabel ColumnSize="ColumnSize.Is2">Requester Comments</FieldLabel>
             <FieldBody ColumnSize="ColumnSize.Is10">
-                <MemoEdit Rows="5" />
+                <TextEdit Disabled="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin egestas in dolor vitae finibus. Integer mattis turpis ut lectus malesuada, viverra luctus massa tincidunt. In dapibus fringilla porta.</TextEdit>
             </FieldBody>
         </Field>
 
         <Heading Class="my-5" Size="HeadingSize.Is2">Expense Claim Items</Heading>
+
         <Table>
             <TableHeader>
                 <TableRow>
                     <TableHeaderCell>Category</TableHeaderCell>
+                    <TableHeaderCell>Payee</TableHeaderCell>
                     <TableHeaderCell>Payee</TableHeaderCell>
                     <TableHeaderCell>Date</TableHeaderCell>
                     <TableHeaderCell>Description</TableHeaderCell>
@@ -94,8 +113,8 @@
                 </TableRow>
             </TableBody>
         </Table>
-
         <Divider />
+        
         <Field Horizontal="true">
             <FieldLabel ColumnSize="ColumnSize.Is10"></FieldLabel>
             <FieldBody ColumnSize="ColumnSize.Is2">

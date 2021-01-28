@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CleanArchitecture.ClaimManager.Application.DTOs.ExpenseClaim;
 using CleanArchitecture.ClaimManager.Application.Features.ExpenseClaims.Commands.CreateExpenseClaim;
 using CleanArchitecture.ClaimManager.Application.Features.Products.Commands.CreateProduct;
 using CleanArchitecture.ClaimManager.Application.Features.Products.Queries.GetAllProducts;
@@ -17,7 +18,8 @@ namespace CleanArchitecture.ClaimManager.Application.Mappings
             CreateMap<Product, GetAllProductsViewModel>().ReverseMap();
             CreateMap<CreateProductCommand, Product>();
             CreateMap<GetAllProductsQuery, GetAllProductsParameter>();
-            CreateMap<CreateExpenseClaimCommand, ExpenseClaim>();
+            CreateMap<PostExpenseClaimDto, ExpenseClaim>();
+            CreateMap<PostExpenseClaimItemDto, ExpenseClaimLineItem>();
             
         }
     }

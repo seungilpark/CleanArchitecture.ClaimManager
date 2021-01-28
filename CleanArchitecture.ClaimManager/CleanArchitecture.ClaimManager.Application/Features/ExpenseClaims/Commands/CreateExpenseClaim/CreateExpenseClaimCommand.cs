@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using CleanArchitecture.ClaimManager.Application.DTOs.ExpenseClaim;
+using CleanArchitecture.ClaimManager.Application.Interfaces;
 using CleanArchitecture.ClaimManager.Application.Interfaces.Repositories;
 using CleanArchitecture.ClaimManager.Application.Wrappers;
 using CleanArchitecture.ClaimManager.Domain.Entities.ExpenseClaim;
@@ -12,32 +14,29 @@ namespace CleanArchitecture.ClaimManager.Application.Features.ExpenseClaims.Comm
 {
     public partial class CreateExpenseClaimCommand: IRequest<Response<int>>
     {
-        public string Title { get; set; }
-        public int Requester { get; set; }
-        public int Approver { get; set; }
-        public DateTime SubmitDate { get; set; }
-        public string RequesterComments { get; set; }
-        public List<ExpenseClaimLineItem> ExpenseClaimLineItems { get; set; }
+        public PostExpenseClaimDto ClaimDto { get; set; }
+        public List<PostExpenseClaimItemDto> ClaimItems { get; set; }
     }
     public class CreateExpenseclaimCommandHandler : IRequestHandler<CreateExpenseClaimCommand, Response<int>>
     {
-        private readonly IExpenseClaimRepositoryAsync _expenseClaimRepository;
+        private readonly IClaimUnitOfWork UnitOfWork;
         private readonly IMapper _mapper;
-        public CreateExpenseclaimCommandHandler(IExpenseClaimRepositoryAsync expenseClaimRepository, IMapper mapper)
+        public CreateExpenseclaimCommandHandler(IClaimUnitOfWork unitOfWork, IMapper mapper)
         {
-            _expenseClaimRepository = expenseClaimRepository;
+            UnitOfWork = unitOfWork;
             _mapper = mapper;
         }
 
         public async Task<Response<int>> Handle(CreateExpenseClaimCommand request, CancellationToken cancellationToken)
         {
-            var claim = _mapper.Map<ExpenseClaim>(request);
-
-            await _expenseClaimRepository.AddAsync(claim);
+            var claim = _mapper.Map<ExpenseClaim>(request.ClaimDto);
+            Console.WriteLine(claim);
+            var items = _mapper.Map<ExpenseClaimLineItem[]>(request.ClaimItems);
+            claim.ExpenseClaimLineItems = items;
+            await UnitOfWork.ClaimRepository.AddAsync(claim);
+            UnitOfWork.Complete();
+            Console.WriteLine(claim);
             return new Response<int>(claim.Id);
-
-            //var product = _mapper.Map<Product>(request);
-            // await _claimRepository.addAsync(claim);
         }
     }
 }

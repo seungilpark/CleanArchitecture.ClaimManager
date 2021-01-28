@@ -1,0 +1,118 @@
+﻿@page "/create-claim"
+
+<Container Class="mainContainer">
+    <Row Class="my-3">
+        <DisplayHeading Size="DisplayHeadingSize.Is3">Expense Claim</DisplayHeading>
+    </Row>
+    <Row Class="mb-5">
+        <Heading Size="HeadingSize.Is2">New Expense Claim</Heading>
+    </Row>
+    <Form>
+        <Field Horizontal="true">
+            <FieldLabel ColumnSize="ColumnSize.Is2">Title*</FieldLabel>
+            <FieldBody ColumnSize="ColumnSize.Is10">
+                <TextEdit Placeholder="Type a value" />
+            </FieldBody>
+        </Field>
+        <Field Horizontal="true">
+            <FieldLabel ColumnSize="ColumnSize.Is2">Requester*</FieldLabel>
+            <FieldBody ColumnSize="ColumnSize.Is10">
+                <TextEdit Placeholder="Type a value" />
+            </FieldBody>
+        </Field>
+        <Field Horizontal="true">
+            <FieldLabel ColumnSize="ColumnSize.Is2">Approver*</FieldLabel>
+            <FieldBody ColumnSize="ColumnSize.Is10">
+                <TextEdit Placeholder="Type a value" />
+            </FieldBody>
+        </Field>
+        <Field Horizontal="true">
+            <FieldLabel ColumnSize="ColumnSize.Is2"></FieldLabel>
+            <FieldBody ColumnSize="ColumnSize.Is10">
+                <TextEdit Placeholder=@DateTime.Now.ToString("d/mm/yyyy") />
+            </FieldBody>
+        </Field>
+
+        <Field Horizontal="true">
+            <FieldLabel ColumnSize="ColumnSize.Is2">Total Amount</FieldLabel>
+            <FieldBody ColumnSize="ColumnSize.Is10">
+                <TextEdit Placeholder="" />
+            </FieldBody>
+        </Field>
+        <Field Horizontal="true">
+            <FieldLabel ColumnSize="ColumnSize.Is2">Requester Comments</FieldLabel>
+            <FieldBody ColumnSize="ColumnSize.Is10">
+                <MemoEdit Rows="5" />
+            </FieldBody>
+        </Field>
+
+        <Heading Class="my-5" Size="HeadingSize.Is2">Expense Claim Items</Heading>
+
+        <Buttons>
+            <Button Color="Color.Primary">Add</Button>
+            <Button Color="Color.Secondary">Edit</Button>
+            <Button Color="Color.Danger">Delete</Button>
+        </Buttons>
+        <Table>
+            <TableHeader>
+                <TableRow>
+                    <TableHeaderCell>Category</TableHeaderCell>
+                    <TableHeaderCell>Payee</TableHeaderCell>
+                    <TableHeaderCell>Date</TableHeaderCell>
+                    <TableHeaderCell>Description</TableHeaderCell>
+                    <TableHeaderCell>Amount</TableHeaderCell>
+                    <TableHeaderCell>Currency Code</TableHeaderCell>
+                    <TableHeaderCell>USD Amount</TableHeaderCell>
+                    <TableHeaderCell>Receipt</TableHeaderCell>
+                </TableRow>
+            </TableHeader>
+            <TableBody>
+                <TableRow>
+                    <TableRowHeader>1</TableRowHeader>
+                    <TableRowCell>Mark</TableRowCell>
+                    <TableRowCell>Otto</TableRowCell>
+                    <TableRowCell>Otto</TableRowCell>
+                    <TableRowCell>@@mdo</TableRowCell>
+                    <TableRowCell>@@mdo</TableRowCell>
+                    <TableRowCell>@@mdo</TableRowCell>
+                    <TableRowCell>@@mdo</TableRowCell>
+                </TableRow>
+                <TableRow>
+                    <TableRowHeader>2</TableRowHeader>
+                    <TableRowCell>Jacob</TableRowCell>
+                    <TableRowCell>Thornton</TableRowCell>
+                    <TableRowCell>@@fat</TableRowCell>
+                    <TableRowHeader>2</TableRowHeader>
+                    <TableRowCell>Jacob</TableRowCell>
+                    <TableRowCell>Thornton</TableRowCell>
+                    <TableRowCell>@@fat</TableRowCell>
+                </TableRow>
+                <TableRow>
+                    <TableRowHeader>3</TableRowHeader>
+                    <TableRowHeader>2</TableRowHeader>
+                    <TableRowCell>Jacob</TableRowCell>
+                    <TableRowCell>Thornton</TableRowCell>
+                    <TableRowCell>@@fat</TableRowCell>
+                    <TableRowCell>Larry</TableRowCell>
+                    <TableRowCell>the Bird</TableRowCell>
+                    <TableRowCell>@@twitter</TableRowCell>
+                </TableRow>
+            </TableBody>
+        </Table>
+        <Divider />
+        
+        <Field Horizontal="true">
+            <FieldLabel ColumnSize="ColumnSize.Is10"></FieldLabel>
+            <FieldBody ColumnSize="ColumnSize.Is2">
+                <Button Type="ButtonType.Submit" PreventDefaultOnSubmit="true">Submit</Button>
+                <Button>Cancel</Button>
+            </FieldBody>
+        </Field>
+    </Form>
+
+</Container>
+
+
+@code {
+
+}

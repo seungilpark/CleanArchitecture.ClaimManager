@@ -1,5 +1,7 @@
 using CleanArchitecture.ClaimManager.Infrastructure.Identity;
 using CleanArchitecture.ClaimManager.Infrastructure.Identity.Models;
+using CleanArchitecture.ClaimManager.Infrastructure.Persistence;
+using CleanArchitecture.ClaimManager.Infrastructure.Persistence.Contexts;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
@@ -42,6 +44,10 @@ namespace CleanArchitecture.ClaimManager.WebApi
                     await Infrastructure.Identity.Seeds.DefaultRoles.SeedAsync(userManager, roleManager);
                     await Infrastructure.Identity.Seeds.DefaultSuperAdmin.SeedAsync(userManager, roleManager);
                     await Infrastructure.Identity.Seeds.DefaultBasicUser.SeedAsync(userManager, roleManager);
+
+                    var context = services.GetRequiredService<ApplicationDbContext>();
+                    DbInitializer.Initialize(context);
+
                     Log.Information("Finished Seeding Default Data");
                     Log.Information("Application Starting");
                 }

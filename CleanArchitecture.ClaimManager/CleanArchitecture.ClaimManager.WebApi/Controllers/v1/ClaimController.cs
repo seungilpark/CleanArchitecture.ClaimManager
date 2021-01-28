@@ -29,7 +29,6 @@ namespace CleanArchitecture.ClaimManager.WebApi.Controllers.v1
 
         // POST api/<controller>
         [HttpPost]
-        [Authorize]
         public async Task<IActionResult> Post(CreateExpenseClaimCommand command)
         {
             return Ok(await Mediator.Send(command));

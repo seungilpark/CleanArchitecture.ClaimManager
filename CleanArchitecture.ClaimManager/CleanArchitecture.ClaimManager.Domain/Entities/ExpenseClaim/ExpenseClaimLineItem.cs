@@ -7,7 +7,6 @@ namespace CleanArchitecture.ClaimManager.Domain.Entities.ExpenseClaim
 {
     public class ExpenseClaimLineItem : BaseEntity
     {
-        public int ExpenseClaimId { get; set;  }
         public int ExpenseCategoryId { get; set;  }
         public string Payee { get; set;  }
         public DateTime Date { get; set; }

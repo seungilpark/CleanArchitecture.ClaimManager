@@ -1,0 +1,101 @@
+﻿@page "/claims"
+
+<Container Style="max-width:'1080px'">
+    <Row Class="my-3">
+        <DisplayHeading Size="DisplayHeadingSize.Is3">Claims</DisplayHeading>
+    </Row>
+
+    <Table>
+        <TableHeader>
+            <TableRow>
+                <TableHeaderCell>#</TableHeaderCell>
+                <TableHeaderCell>Requester</TableHeaderCell>
+                <TableHeaderCell>Approver</TableHeaderCell>
+                <TableHeaderCell>Submitted Date</TableHeaderCell>
+                <TableHeaderCell>Total Amount</TableHeaderCell>
+                <TableHeaderCell>Status</TableHeaderCell>
+                <TableHeaderCell>Actions</TableHeaderCell>
+            </TableRow>
+        </TableHeader>
+        <TableBody>
+            <TableRow>
+                <TableRowHeader>1</TableRowHeader>
+                <TableRowCell>Mark</TableRowCell>
+                <TableRowCell>Otto</TableRowCell>
+                <TableRowCell>@@mdo</TableRowCell>
+                <TableRowCell>@@mdo</TableRowCell>
+                <TableRowCell>@@mdo</TableRowCell>
+                <TableRowCell>
+                    <Buttons>
+                        <Button Color="Color.Primary">
+                            <NavLink href="approve-claim/1">Review</NavLink>
+                        </Button>
+                        <Button Color="Color.Secondary">Edit</Button>
+                        <Button Color="Color.Danger">Delete</Button>
+                    </Buttons>
+                </TableRowCell>
+            </TableRow>
+            <TableRow>
+                <TableRowHeader>2</TableRowHeader>
+                <TableRowCell>Jacob</TableRowCell>
+                <TableRowCell>Jacob</TableRowCell>
+                <TableRowCell>Jacob</TableRowCell>
+                <TableRowCell>Thornton</TableRowCell>
+                <TableRowCell>@@fat</TableRowCell>
+                <TableRowCell>
+                    <Buttons>
+                        <Button Color="Color.Primary">View</Button>
+                        <Button Color="Color.Secondary">Edit</Button>
+                        <Button Color="Color.Danger">Delete</Button>
+                    </Buttons>
+                </TableRowCell>
+            </TableRow>
+            <TableRow>
+                <TableRowHeader>3</TableRowHeader>
+                <TableRowCell>Larry</TableRowCell>
+                <TableRowCell>Larry</TableRowCell>
+                <TableRowCell>the Bird</TableRowCell>
+                <TableRowCell>the Bird</TableRowCell>
+                <TableRowCell>@@twitter</TableRowCell>
+                <TableRowCell>
+                    <Buttons>
+                        <Button Color="Color.Primary">View</Button>
+                        <Button Color="Color.Secondary">Edit</Button>
+                        <Button Color="Color.Danger">Delete</Button>
+                    </Buttons>
+                </TableRowCell>
+            </TableRow>
+        </TableBody>
+    </Table> 
+
+    <Pagination Class="d-flex justify-content-center align-items-center">
+        <PaginationItem>
+            <PaginationLink>
+                <span aria-hidden="true">«</span>
+            </PaginationLink>
+        </PaginationItem>
+        <PaginationItem>
+            <PaginationLink>
+                1
+            </PaginationLink>
+        </PaginationItem>
+        <PaginationItem>
+            <PaginationLink>
+                2
+            </PaginationLink>
+        </PaginationItem>
+        <PaginationItem>
+            <PaginationLink>
+                3
+            </PaginationLink>
+        </PaginationItem>
+        <PaginationItem>
+            <PaginationLink>
+                <span aria-hidden="true">»</span>
+            </PaginationLink>
+        </PaginationItem>
+    </Pagination>
+</Container>
+
+@code { 
+}

@@ -3,12 +3,10 @@ using CleanArchitecture.ClaimManager.Application.Interfaces.Repositories;
 using CleanArchitecture.ClaimManager.Infrastructure.Persistence.Contexts;
 using CleanArchitecture.ClaimManager.Infrastructure.Persistence.Repositories;
 using CleanArchitecture.ClaimManager.Infrastructure.Persistence.Repository;
+using CleanArchitecture.ClaimManager.Infrastructure.UnitOfWorks.ExpenseClaims;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CleanArchitecture.ClaimManager.Infrastructure.Persistence
 {
@@ -26,12 +24,13 @@ namespace CleanArchitecture.ClaimManager.Infrastructure.Persistence
                 services.AddDbContext<ApplicationDbContext>(options =>
                options.UseSqlServer(
                    configuration.GetConnectionString("DefaultConnection"),
-                   b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+                   b => b.MigrationsAssembly("CleanArchitecture.ClaimManager.WebApi")));
             }
             #region Repositories
             services.AddTransient(typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>));
             services.AddTransient<IProductRepositoryAsync, ProductRepositoryAsync>();
             services.AddTransient<IExpenseClaimRepositoryAsync, ExpenseClaimRepositoryAsync>();
+            services.AddTransient<IClaimUnitOfWork, ClaimUnitOfWork>();
             #endregion
         }
     }
